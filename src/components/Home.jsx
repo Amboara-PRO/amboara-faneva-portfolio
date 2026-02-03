@@ -42,7 +42,7 @@ export default function Home() {
           <div className="relative">
             <div className="absolute -inset-2 rounded-full bg-[var(--color-primary)] opacity-20 blur-lg"></div>
             <img
-              src="/my_profile.jpeg"
+              src="/assets/images/my_profile.jpeg"
               alt="My profile"
               className="relative w-64 h-64 object-cover rounded-full border-4 border-[var(--color-primary)] shadow-xl"
             />

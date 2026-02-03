@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-dark)] shadow z-50 text-[var(--color-surface)]">
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 className="text-3xl md:text-[3.2em] leading-[1.1] font-bold libre-baskerville-italic">Amboara</h1>
+        <h1 className="text-3xl md:text-[3.2em] leading-[1.1] font-bold">Amboara</h1>
         <ul className="hidden md:flex space-x-6 text-sm font-medium">
           <li>
             <a href="#home" className="hover:text-red-200 transition-all duration-300 text-2xl">
