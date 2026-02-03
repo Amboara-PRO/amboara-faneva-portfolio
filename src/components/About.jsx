@@ -17,7 +17,7 @@ export default function About() {
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-          {["HTML", "CSS", "React", "Java", "PostgreSQL", "Tailwind CSS", "Javascipt", "Github"].map((skill) => (
+          {["HTML", "CSS", "Javascript", "React", "Java", "PostgreSQL", "Tailwind CSS", "Github"].map((skill) => (
             <div
               key={skill}
               className="
