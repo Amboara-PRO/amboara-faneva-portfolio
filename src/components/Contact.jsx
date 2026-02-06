@@ -106,9 +106,20 @@ function Contact() {
 
             <button
               type="submit"
-              className="w-full bg-[var(--color-primary)] text-white py-3 rounded-lg font-semibold hover:bg-[var(--color-primary-dark)] transition-all duration-300"
+              className="w-full bg-[var(--color-primary)] text-white py-3 rounded-lg font-semibold hover:bg-[var(--color-primary-dark)] transition-all duration-300 flex items-center justify-center gap-4 md:gap-6 "
             >
-              Send message
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+                className="w-6 h-6 md:w-7 md:h-7"
+              >
+                <g transform="rotate(-45 12 12)">
+                  <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                </g>
+              </svg>
+              <p>Send message</p>
             </button>
           </form>
         )}
@@ -116,4 +127,4 @@ function Contact() {
     </section>
   );
 }
-export default Contact
+export default Contact;
