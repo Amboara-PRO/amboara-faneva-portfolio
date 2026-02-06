@@ -1,4 +1,4 @@
-export default function Experience() {
+function Experience() {
   return (
     <section
       id="experience"
@@ -30,10 +30,7 @@ export default function Experience() {
             </h3>
 
             <p className="text-[var(--color-muted)] leading-relaxed">
-              Development of modern web applications using
-              <span className="font-medium text-[var(--color-text)]">
-                {" "}React
-              </span>,
+              Development of modern web applications using React,
               PostgreSQL databases, and Java-based business logic with a focus
               on clean architecture and maintainability.
             </p>
@@ -57,10 +54,7 @@ export default function Experience() {
             </h3>
 
             <p className="text-[var(--color-muted)] leading-relaxed">
-              Experience working in collaborative environments using
-              <span className="font-medium text-[var(--color-text)]">
-                {" "}Git & GitHub
-              </span>,
+              Experience working in collaborative environments using Git & GitHub,
               applying clean code principles, version control workflows,
               and modern development best practices.
             </p>
@@ -71,3 +65,4 @@ export default function Experience() {
     </section>
   );
 }
+export default Experience

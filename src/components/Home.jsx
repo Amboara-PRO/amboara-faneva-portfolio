@@ -1,4 +1,4 @@
-export default function Home() {
+function Home() {
   return (
     <section
       id="home"
@@ -53,3 +53,4 @@ export default function Home() {
     </section>
   );
 }
+export default Home
