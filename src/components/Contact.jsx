@@ -106,7 +106,7 @@ function Contact() {
 
             <button
               type="submit"
-              className="w-full bg-[var(--color-primary)] text-white py-3 rounded-lg font-semibold hover:bg-[var(--color-primary-dark)] transition-all duration-300 flex items-center justify-center gap-4 md:gap-6 "
+              className="w-full bg-[var(--color-primary)] text-white py-3 rounded-lg font-medium hover:bg-[var(--color-primary-dark)] transition-all duration-300 flex items-center justify-center gap-4 md:gap-6 "
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
