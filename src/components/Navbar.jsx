@@ -12,7 +12,7 @@ function Navbar() {
           <li>
             <a
               href="#home"
-              className="hover:text-red-200 transition-all duration-300 text-2xl"
+              className="hover:text-red-200 transition-all duration-300 text-xl"
             >
               Home
             </a>
@@ -20,7 +20,7 @@ function Navbar() {
           <li>
             <a
               href="#about"
-              className="hover:text-red-200 transition-all duration-300 text-2xl"
+              className="hover:text-red-200 transition-all duration-300 text-xl"
             >
               About
             </a>
@@ -28,7 +28,7 @@ function Navbar() {
           <li>
             <a
               href="#experience"
-              className="hover:text-red-200 transition-all duration-300 text-2xl"
+              className="hover:text-red-200 transition-all duration-300 text-xl"
             >
               Experience
             </a>
@@ -36,7 +36,7 @@ function Navbar() {
           <li>
             <a
               href="#contact"
-              className="hover:text-red-200 transition-all duration-300 text-2xl"
+              className="hover:text-red-200 transition-all duration-300 text-xl"
             >
               Contact
             </a>
