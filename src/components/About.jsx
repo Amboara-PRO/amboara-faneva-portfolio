@@ -204,7 +204,7 @@ const skills = [
 function About() {
   return (
     <section id="about" className="py-24 bg-[var(--color-surface)]">
-      <div className="max-w-6xl mx-auto px-6 text-center">
+      <div className="max-w-6xl mx-auto px-3 text-center">
         <h2 className="text-3xl md:text-4xl font-extrabold mb-6 text-[var(--color-text)]">
           About <span className="text-[var(--color-primary)]">Me</span>
         </h2>
@@ -215,7 +215,7 @@ function About() {
           and building reliable, scalable applications.
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 md:gap-6 gap-4 max-w-4xl mx-auto">
           {skills.map((skill) => (
             <div
               key={skill.id}
@@ -223,7 +223,8 @@ function About() {
                 bg-white
                 border border-gray-200
                 rounded-xl
-                py-6
+                py-5
+                p-3
                 font-semibold
                 text-[var(--color-text)]
                 shadow-sm
@@ -236,7 +237,7 @@ function About() {
                 justify-center
               "
             >
-              <div className="w-[35%] flex items-center justify-center ml-3">
+              <div className="w-[35%] flex items-center justify-center">
                 {skill.icon}
               </div>
               <div className="w-[65%]">{skill.name}</div>
