@@ -249,11 +249,3 @@ function About() {
 }
 
 export default About;
-// "HTML",
-// "CSS",
-// "Javascript",
-// "React",
-// "Java",
-// "PostgreSQL",
-// "Tailwind CSS",
-// "Github",
