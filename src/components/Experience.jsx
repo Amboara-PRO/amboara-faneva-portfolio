@@ -1,17 +1,12 @@
 function Experience() {
   return (
-    <section
-      id="experience"
-      className="py-24 bg-[var(--color-background)]"
-    >
+    <section id="experience" className="py-24 bg-[var(--color-background)]">
       <div className="max-w-6xl mx-auto px-6">
-
         <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-16 text-[var(--color-text)]">
-          My Experience
+          <span className="text-[var(--color-primary)]">My</span> Experience
         </h2>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-
           <div
             className="
               bg-white
@@ -30,9 +25,9 @@ function Experience() {
             </h3>
 
             <p className="text-[var(--color-muted)] leading-relaxed">
-              Development of modern web applications using React,
-              PostgreSQL databases, and Java-based business logic with a focus
-              on clean architecture and maintainability.
+              Development of modern web applications using React, PostgreSQL
+              databases, and Java-based business logic with a focus on clean
+              architecture and maintainability.
             </p>
           </div>
 
@@ -54,15 +49,14 @@ function Experience() {
             </h3>
 
             <p className="text-[var(--color-muted)] leading-relaxed">
-              Experience working in collaborative environments using Git & GitHub,
-              applying clean code principles, version control workflows,
+              Experience working in collaborative environments using Git &
+              GitHub, applying clean code principles, version control workflows,
               and modern development best practices.
             </p>
           </div>
-
         </div>
       </div>
     </section>
   );
 }
-export default Experience
+export default Experience;
