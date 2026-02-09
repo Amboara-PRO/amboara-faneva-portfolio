@@ -45,13 +45,6 @@ export const Contact = () => {
         console.error("FAILED...", error.text || error.message);
         setLoading(false);
         setError(true);
-        setFormData({
-          first_name: "",
-          last_name: "",
-          email: "",
-          subject: "",
-          message: "",
-        });
         setTimeout(() => {
           setError(false);
         }, 7000);
@@ -168,7 +161,7 @@ export const Contact = () => {
               )}
             </button>
             {error && (
-              <div className="text-red-500 text-sm text-center">
+              <div className="text-[var(--color-primary-dark)] text-sm text-center">
                 Failed to send your message. Please try again or check your
                 network.
               </div>

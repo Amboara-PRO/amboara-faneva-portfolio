@@ -4,8 +4,6 @@
   line-height: 1.5;
   font-weight: 400;
 
-  text-rendering: optimizeLegibility;
-
   --color-primary: #dc2626; /* rouge principal */
   --color-primary-dark: #b91c1c; /* rouge foncé */
   --color-secondary: #1f2937; /* gris foncé */
@@ -15,14 +13,34 @@
   --color-muted: #6b7280; /* texte secondaire */
 }
 
+.dark {
+  --color-primary: #ef4444;
+  --color-primary-dark: #dc2626;
+  --color-secondary: #e5e7eb;
+  --color-background: #0f172a;
+  --color-surface: #111827;
+  --color-text: #f9fafb;
+  --color-muted: #9ca3af;
+}
+
 html {
   scroll-behavior: smooth;
 }
-
+* {
+  transition: all 0.3s ease-in-out;
+}
 a {
   font-weight: 500;
 }
 
+input,
+textarea {
+  color: var(--color-text);
+}
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-muted);
+}
 body {
   margin: 0;
   display: flex;
@@ -34,26 +52,19 @@ body {
 span {
   font-family: "Lato", sans-serif;
 }
-h1{
+h1 {
   font-family: "Libre Baskerville", serif;
   font-weight: 400;
   font-style: italic;
 }
 button {
-  border-radius: 8px;
-  padding-block: 0.75rem;
-  font-size: 1em;
-  font-weight: 500;
   cursor: pointer;
+  outline: none;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
     background-color: var(--color-surface);
   }
 }
