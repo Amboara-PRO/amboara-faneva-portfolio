@@ -24,14 +24,14 @@ function Home() {
           <div className="flex gap-4">
             <a
               href="#experience"
-              className="bg-[var(--color-primary)] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[var(--color-primary-dark)] transition-all duration-300 shadow-md"
+              className="bg-[var(--color-primary)] text-[var(--color-surface)] px-6 py-3 rounded-lg font-semibold hover:bg-[var(--color-primary-dark)] transition-all duration-300 shadow-md"
             >
               View my work
             </a>
 
             <a
               href="#contact"
-              className="border-2 border-[var(--color-primary)] text-[var(--color-primary)] px-6 py-3 rounded-lg hover:bg-[var(--color-primary)] hover:text-white transition-all duration-300"
+              className="border-2 border-[var(--color-primary)] text-[var(--color-primary)] px-6 py-3 rounded-lg hover:bg-[var(--color-primary)] hover:text-[var(--color-surface)] transition-all duration-300"
             >
               Contact me
             </a>

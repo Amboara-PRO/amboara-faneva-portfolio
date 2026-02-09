@@ -9,7 +9,7 @@ function Experience() {
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <div
             className="
-              bg-white
+              bg-[var(--color-surface)]
               border border-gray-200
               rounded-xl
               p-8
@@ -33,7 +33,7 @@ function Experience() {
 
           <div
             className="
-              bg-white
+              bg-[var(--color-surface)]
               border border-gray-200
               rounded-xl
               p-8

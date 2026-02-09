@@ -1,23 +1,61 @@
+import React, { useRef } from "react";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
-function Contact() {
+export const Contact = () => {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    last_name: "",
+    first_name: "",
     email: "",
+    subject: "",
     message: "",
   });
-
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const form = useRef();
+  const sendEmail = (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setFormData({ firstName: "", lastName: "", email: "", message: "" });
+    setLoading(true);
+    setError(false);
+    setSubmitted(false);
+
+    emailjs
+      .sendForm("service_39wgkv7", "template_kt55sya", form.current, {
+        publicKey: "I09vqa_60VGsdPEM4",
+      })
+      .then(() => {
+        console.log("SUCCESS!");
+        setLoading(false);
+        setSubmitted(true);
+        setFormData({
+          last_name: "",
+          first_name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      })
+      .catch((error) => {
+        console.error("FAILED...", error.text || error.message);
+        setLoading(false);
+        setError(true);
+        setFormData({
+          first_name: "",
+          last_name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+        setTimeout(() => {
+          setError(false);
+        }, 7000);
+      });
   };
 
   return (
@@ -26,13 +64,11 @@ function Contact() {
         <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-6 text-[var(--color-text)]">
           Contact <span className="text-[var(--color-primary)]">Me</span>
         </h2>
-
         <p className="text-center text-[var(--color-muted)] mb-14">
           Have a project, an idea, or a question? Feel free to reach out.
         </p>
-
         {submitted ? (
-          <div className="max-w-xl mx-auto bg-white border border-gray-200 p-8 rounded-xl shadow text-center">
+          <div className="max-w-xl mx-auto bg-[var(--color-surface)] border border-gray-200 p-8 rounded-xl shadow text-center">
             <div className="text-3xl mb-4 flex items-center justify-center ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -54,36 +90,36 @@ function Contact() {
               Message sent successfully
             </h3>
             <p className="text-[var(--color-muted)]">
-              Thank you for your message. I’ll get back to you as soon as
-              possible.
+              Thank you for your message! A confirmation email has been sent to
+              you. I’ll get back to you as soon as possible.
             </p>
           </div>
         ) : (
           <form
-            onSubmit={handleSubmit}
-            className="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-lg space-y-5"
+            ref={form}
+            onSubmit={sendEmail}
+            className="max-w-xl mx-auto bg-[var(--color-surface)] p-8 rounded-xl shadow-lg space-y-5"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <input
                 type="text"
-                name="lastName"
+                name="last_name"
                 placeholder="Last name"
-                value={formData.lastName}
+                value={formData.last_name}
                 onChange={handleChange}
                 required
                 className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
               />
               <input
                 type="text"
-                name="firstName"
+                name="first_name"
                 placeholder="First name"
-                value={formData.firstName}
+                value={formData.first_name}
                 onChange={handleChange}
                 required
                 className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
               />
             </div>
-
             <input
               type="email"
               name="email"
@@ -93,7 +129,15 @@ function Contact() {
               required
               className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
             />
-
+            <input
+              type="text"
+              name="subject"
+              placeholder="Subject"
+              value={formData.subject}
+              onChange={handleChange}
+              required
+              className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+            />
             <textarea
               name="message"
               placeholder="Your message"
@@ -103,10 +147,9 @@ function Contact() {
               required
               className="w-full p-3 rounded-lg border border-gray-300 resize-none focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
             />
-
             <button
               type="submit"
-              className="w-full bg-[var(--color-primary)] text-white py-3 rounded-lg font-medium hover:bg-[var(--color-primary-dark)] transition-all duration-300 flex items-center justify-center gap-4 md:gap-6 "
+              className="relative w-full bg-[var(--color-primary)] text-[var(--color-surface)] py-3 rounded-lg font-medium hover:bg-[var(--color-primary-dark)] transition-all duration-300 flex items-center justify-center gap-4 md:gap-6 "
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -120,11 +163,20 @@ function Contact() {
                 </g>
               </svg>
               <p>Send message</p>
+              {loading && (
+                <div className="absolute top-3 right-3 w-3 h-3 bg-[var(--color-background)] rounded-full animate-ping"></div>
+              )}
             </button>
+            {error && (
+              <div className="text-red-500 text-sm text-center">
+                Failed to send your message. Please try again or check your
+                network.
+              </div>
+            )}
           </form>
         )}
       </div>
     </section>
   );
-}
+};
 export default Contact;
